@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <!--CDN Implementierung von jQuery-->
+
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+  <!--CDN Implementierung von Pico.Css-->
+
+
+
+  <title>O.N.eV</title>
+
+
+  <style>
+
+    .color {
+      color: rgb(205, 157, 122);
+      /* Ändert die Farbe der Elemente (Wurd für die Verlinkungselemente (Startseite und Instagram) im Header verwendet) */
+
+    }
+
+    .center-image {
+      display: block;
+      max-width: 70%;
+      max-height: 70%;
+
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+
+    .custom-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+
+    .custom-grid>div {
+      flex-basis: 50%;
+    }
+
+    .logo-link {
+      display: inline-block;
+      position: relative;
+      height: 80px;
+      width: 256px;
+      overflow: hidden;
+
+    }
+
+    .logo {
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+
+    @media (max-width: 1023px) {
+      .custom-grid>div {
+        flex-basis: 100%;
+      }
+
+      .logo-link {
+        display: inline-block;
+        position: relative;
+        height: 80px;
+        width: 126px;
+        overflow: hidden;
+      }
+
+      .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Ändern der Reihenfolge von Bildern und Textabschnitten */
+      .grid .center-image {
+        order: -1;
+      }
+
+      .grid article {
+        order: -2;
+      }
+
+
+    }
+
+
+    .logo {
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+
+
+
+
+
+    .löschButton {
+      background-color: red;
+      border: 15px;
+      color: white;
+      padding: 5px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .collapsible {
+
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .collapsible:hover {
+      color: darkblue;
+    }
+
+
+
+
+
+
+    h3,
+    h4,
+    p {
+      text-align: center;
+    }
+
+    .bestaetigung {
+      font-weight: bold;
+      color: wheat;
+    }
+
+    #main-content {
+      text-align: center;
+    }
+
+
+
+    .spenden-item {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .spenden-item:hover {
+      color: darkblue;
+    }
+  </style>
+
+<script type="text/javascript" src="testFunctions.js"></script>
+  <script type="application/javascript">
+
+     
+
+      //Laden des Main-Bereiches von formular.html mit der Ajax-Methode durch Spemdem-Button
+
+    $(document).ready(function () {
+
+      $('#formular-laden-button').click(function () {
+        $.ajax({
+          url: 'formular.html',
+          dataType: 'html',
+          success: function (response) {
+            $('#main-content').html(response);
+
+          }
+        });
+      });
+
+
+      //-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+      //Laden des Main-Bereiches von formular.html mit der Ajax-Methode durch Formular-Text
+
+
+
+      $('#formular-laden-textLink').click(function () {
+        $.ajax({
+          url: 'formular.html',
+          dataType: 'html',
+          success: function (response) {
+            $('#main-content').html(response);}});});});
+
+      //------------------------------------------
+
+
+          
+
+
+  
+ //Laden des Main-Bereiches von interne_Seite.html mit Ajax-Methode 
+
+
+
+    $(document).ready(function () {
+  $('#interne_seite-main').click(function () {
+    $.ajax({
+      url: 'interne_seite.html',
+      dataType: 'html',
+      success: function (response) {
+        $('#main-content').html(response);
+      }
+    });
+  });
+});
+
+//-----------------------------------------------------
+
+
+
+
+
+
+//Laden des Main-Bereiches von impressum.html mit der Ajax-Methode
+
+
+    $(document).ready(function () {
+      $('#impressum-laden').click(function () {
+        $.ajax({
+          url: 'impressum.html',
+          dataType: 'html',
+          success: function (response) {
+            $('#main-content').html(response);
+          },
+        });
+      });
+    });
+//-----------------------------------------------------
+
+
+
+
+  </script>
+
+</head>
+
+<body class="container">
+
+
+  <header style="padding: 16px; "> <!--Padding: Verringerung des Abstands der Elemente zum Border.-->
+
+    <nav> <!-- PicoCss Framework Nav-->
+      <ul>
+        <li><a href="index.html" class="color">Startseite</a></li> <!-- Nav Verlinkung zur Startseite-->
+      </ul>
+      <ul>
+
+        <li><a href="index.html" class="logo-link"> <strong><img class="logo" src="Bilder/Logo.png"
+                alt="Logo: O.N. eV Old for You, New for Them" class="logoWith"></strong></a></li>
+        <!-- Nav Verlinkung zur Startseite-->
+
+
+
+      </ul>
+      <ul>
+        <li><a href="https://www.instagram.com/On.eV." target="_blank" class="color">Instagram </a></li>
+        <!-- Nav Verlinkung zur einer fiktiven Instagram Seite-->
+
+
+      </ul>
+    </nav>
+
+
+  </header>
+
+
+  <main style="padding: 16px;" id="main-content"> <!--Padding: Verringerung des Abstands der Elemente zum Border-->
+
+
+    <a style="width: 100%;" href="#" id="formular-laden-button" role="button" class="contrast">Spenden </a>
+
+
+
+    <!-- Ab hier werden die Elemente in ein Reponsiv Rastersystem durch Pico.Css gepackt  -->
+    <div class="grid">
+      <div class="center-image"><img src="Bilder/Wir.png" alt="WIR Logo"></div>
+      <div>
+        <article aria-label="Card">Wir sind eine gemeinnützige Organisation, die Wert auf Transparenz und
+          Einfachheit legt, um die Welt ein wenig zu verbessern. Zu diesem Zweck benötigen Wir Dich.</article>
+      </div>
+    </div>
+    <!-- Ende des Rastersystems -->
+
+
+    <!-- Ab hier werden die Elemente in ein Reponsiv Rastersystem durch Pico.Css gepackt  -->
+    <div class="grid">
+      <div>
+        <article aria-label="Card">Wir legen großen Wert darauf, dass die Spenden so einfach wie möglich
+          erfolgen
+          sollen. Du füllst ein <a href="#" id="formular-laden-textLink">Formular</a> aus und erhältst eine
+          Bestätigung. Die
+          Spenden können entweder, von uns abgeholt weden, oder du bringst sie vorbei. Ganz Einfach und
+          bequem!
+        </article>
+      </div>
+      <!-- Ende des Rastersystems -->
+
+
+      <!-- Ab hier werden die Elemente in ein Reponsiv Rastersystem durch Pico.Css gepackt  -->
+      <div class="center-image"><img src="Bilder/Konzept.png" alt="Konzept Logo"></div>
+    </div>
+
+    <div class="grid">
+      <div class="center-image"><img src="Bilder/Du.png" alt="Du Logo"></div>
+      <div>
+        <article aria-label="Card">DU bist der Mittelpunkt dieser gemeinnützige Organisation. Deshalb lassen wir
+          dich entscheiden, in welches Kriesengebiet du spenden willst. Wir halten es so Transparent wie
+          möglich
+          für dich, damit du dich mit deiner Spende wohl füllst.</article>
+      </div>
+    </div>
+    <!-- Ende des Rastersystems -->
+
+
+  </main>
+
+
+
+  <footer>
+
+    <!-- Ab hier werden die Elemente in ein Reponsiv Rastersystem durch Pico.Css gepackt  -->
+
+    <div class="grid">
+      <a id="impressum-laden" href="#" role="button" class="secondary outline">Impressum</a>
+      <!-- Ajax Verfahren- Dynamisches laden der ID = main-content aus dem impressum.html  -->
+      <a id="interne_seite-main" href="#" role="button" class="secondary outline">Interne Seite</a>
+    </div>
+
+    <!-- Ende des Rastersystems -->
+
+  </footer>
+</body>
+
+</html>

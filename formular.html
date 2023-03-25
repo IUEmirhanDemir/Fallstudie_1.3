@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+</head>
+
+  <body>
+<main>
+  <script  src="formular-js.js"></script>   
+
+<!-- Formular-->
+
+    <form id="Spendenformular">
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+
+      <label for="vorname">Vorname:</label>
+      <input type="text" id="vorname" name="vorname" required>
+      <br>
+
+      <label>Abholungsoption:</label>
+
+      <div class="grid">
+        <div>
+
+          <br>
+          <input type="radio" id="abholung" name="abholung" value="Abholung" required>
+          <label for="abholung">Abholung</label>
+          <br>
+
+        </div>
+
+        <div>
+
+          <br>
+          <input type="radio" id="Übergabe an der Geschäftsstelle" name="abholung" value="Übergabe an der Geschäftsstelle">
+          <label for="Übergabe an der Geschäftsstelle">Übergabe an der Geschäftsstelle</label>
+          <br>
+
+        </div>
+
+      </div>
+
+      <div id="abholadresse" style="display:none;">
+
+        <label for="adresse">Adresse:</label>
+        <input type="text" id="adresse" name="adresse">
+
+        <label for="Plz">Postleitzahl:</label>
+        <input type="text" id="Plz" name="Plz" maxlength="5" oninput="this.value = this.value.replace(/\D/g, '')">
+        
+        <br>
+
+      </div>
+
+      <label style="padding-top: 55px;" for="kleidungsstueck">Welches Kleidungsstück:</label>
+      <input type="text" id="kleidungsstueck" name="kleidungsstueck" required>
+      <br>
+
+
+      <label for="Krisengebiet">Krisengebiet:</label>
+      <select id="Krisengebiet" name="Krisengebiet">
+        <option value="Senegal">Senegal</option>
+        <option value="Tuerkei">Türkei</option>
+        <option value="Haiti">Haiti</option>
+        <option value="Jemen">Jemen</option>
+        <option value="Palaestina">Palestina</option>
+      </select>
+      <br>
+
+      <button type="submit">Spenden </button>
+
+    </form>
+
+  </main>
+
+  <!-- Formular-->
+
+  </body>
+
+
+</html>
