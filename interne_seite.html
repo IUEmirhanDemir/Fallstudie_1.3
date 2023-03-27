@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spendendaten anzeigen</title>
+
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"
     integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-  <!--CDN Implementierung von jQuery-->
+
   
   <style>
     .name-vorname {
@@ -27,11 +27,14 @@
 
 <body>
   <main>
-    <button id="ladeDaten">Spendendaten laden</button>
-    <div id="zeigeDatenAn"></div>
+    <script src="interne_Seite-js.js"></script>  <!-- interne_Seite-js.js einbinden-->
+
+    <button id="ladeDaten">Spendendaten laden</button> <!-- Button mit dem Klickevent durch id= ladeDaten eingebunden. Führt die datenAnzeigen_Funktion aus interne_Seite-js.js aus -->
+    
+    <div id="zeigeDatenAn"></div> <!--zeigeDatenAn zeigt die Daten aus dem Lokalen Browser. Einbindung durch interne_Seite-js.js  -->
   </main>
 
-  <script src="interne_Seite-js.js"></script> 
+
 
 </body>
 

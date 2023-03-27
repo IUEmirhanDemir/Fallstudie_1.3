@@ -55,13 +55,22 @@
       Plz = '-';
     }
 
-    var bestaetigung = 'Vielen Dank für Ihre Spende! <br><br>' +
-      'Name: ' + name + '<br>' +
-      'Vorname: ' + vorname + '<br>' +
-      'Abholungsoption: ' + abholung + '<br>' +
-      (adresse ? 'Adresse: ' + adresse + '<br>' + 'Plz: ' + Plz + '<br>' : '') +
-      'Kleidungsstück: ' + kleidungsstueck + '<br>' +
-      'Krisengebiet: ' + krisengebiet;
+    var Uhrzeit = new Date();
+    var tag = Uhrzeit.getDate();
+    var monat = Uhrzeit.getMonth() + 1;
+    var jahr = Uhrzeit.getFullYear().toString().substr(-2);
+    var stunde = Uhrzeit.getHours().toString().padStart(2, '0');
+    var minute = Uhrzeit.getMinutes().toString().padStart(2, '0');
+
+    var bestaetigung = 'Vielen Dank für Ihre Spende!<br><br>' +
+        'Name: ' + name + '<br>' +
+        'Vorname: ' + vorname + '<br>' +
+        'Abholungsoption: ' + abholung + '<br>' +
+        (adresse ? 'Adresse: ' + adresse + '<br>' + 'Plz: ' + Plz + '<br>' : '') +
+        'Kleidungsstück: ' + kleidungsstueck + '<br>' +
+        'Krisengebiet: ' + krisengebiet + '<br>' +  '<br>' +
+        'Datum: ' + tag + '.' + monat + '.' + jahr  + ' ' +
+        'Uhrzeit: ' + stunde + ':' + minute;
 
     $('#main-content').html('<div class="bestaetigung">' + bestaetigung + '</div>');
 
