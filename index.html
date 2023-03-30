@@ -17,116 +17,104 @@
 
 
   <style>
-
     .color {
       color: rgb(205, 157, 122);
       /* Ändert die Farbe der Elemente (Wurd für die Verlinkungselemente (Startseite und Instagram) im Header verwendet) */
 
     }
 
-    .color {
-  color: rgb(205, 157, 122);
-}
+    .color:hover {
+      color: rgb(239, 207, 184);
+      text-decoration: underline;
+    }
 
-.center-image {
-  display: block;
-  max-width: 70%;
-  max-height: 70%;
-  margin: auto;
-}
+    .center-image {
+      display: block;
+      max-width: 70%;
+      max-height: 70%;
+      margin: auto;
+    }
 
-.custom-grid {
-  display: flex;
-  flex-wrap: wrap;
-}
+    .custom-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-.custom-grid>div {
-  flex-basis: 50%;
-}
+    .custom-grid>div {
+      flex-basis: 50%;
+    }
 
-.logo-link {
-  display: inline-block;
-  position: relative;
-  height: 80px;
-  width: 256px;
-  overflow: hidden;
-}
+    .logo-link {
+      display: inline-block;
+      position: relative;
+      height: 80px;
+      width: 256px;
+      overflow: hidden;
+    }
 
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-@media (max-width: 1023px) {
-  .custom-grid>div {
-    flex-basis: 100%;
-  }
+    @media (max-width: 1023px) {
+      .custom-grid>div {
+        flex-basis: 100%;
+      }
 
-  .logo-link {
-    width: 126px;
-  }
+      .logo-link {
+        width: 126px;
+      }
 
-  .grid .center-image {
-    order: -1;
-  }
+      .grid .center-image {
+        order: -1;
+      }
 
-  .grid article {
-    order: -2;
-  }
-}
+      .grid article {
+        order: -2;
+      }
+    }
 
-.löschButton {
-  background-color: red;
-  border: 15px;
-  color: white;
-  padding: 5px 10px;
-  margin-left: 10px;
-  cursor: pointer;
-}
+    .löschButton {
+      background-color: red;
+      border: 15px;
+      color: white;
+      padding: 5px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
 
-.collapsible {
-  cursor: pointer;
-  color: blue;
-  text-decoration: underline;
-}
+    .löschButton:hover {
+      background-color: rgb(122, 10, 10);
+      color: rgb(168, 168, 168);
+    }
 
-.collapsible:hover {
-  color: darkblue;
-}
 
-h3, h4, p {
-  text-align: center;
-}
 
-.bestaetigung {
-  font-weight: bold;
-  color: wheat;
-}
+    h3,
+    h4,
+    p {
+      text-align: center;
+    }
 
-#main-content {
-  text-align: center;
-}
+    .bestaetigung {
+      font-weight: bold;
+      color: wheat;
+    }
 
-.spenden-item {
-  cursor: pointer;
-  color: blue;
-  text-decoration: underline;
-}
-
-.spenden-item:hover {
-  color: darkblue;
-}
-
+    #main-content {
+      text-align: center;
+    }
   </style>
 
 
   <script type="application/javascript">
 
-     
 
-      //Laden des Main-Bereiches von formular.html mit der Ajax-Methode durch Spemdem-Button
+
+    //Laden des Main-Bereiches von formular.html mit der Ajax-Methode durch Spemdem-Button
 
     $(document).ready(function () {
 
@@ -160,39 +148,43 @@ h3, h4, p {
           url: 'formular.html',
           dataType: 'html',
           success: function (response) {
-            $('#main-content').html(response);}});});});
+            $('#main-content').html(response);
+          }
+        });
+      });
+    });
 
-      //------------------------------------------
+    //------------------------------------------
 
 
-          
 
 
-  
- //Laden des Main-Bereiches von interne_Seite.html mit Ajax-Methode 
+
+
+    //Laden des Main-Bereiches von interne_Seite.html mit Ajax-Methode 
 
 
 
     $(document).ready(function () {
-  $('#interne_seite-main').click(function () {
-    $.ajax({
-      url: 'interne_seite.html',
-      dataType: 'html',
-      success: function (response) {
-        $('#main-content').html(response);
-      }
+      $('#interne_seite-main').click(function () {
+        $.ajax({
+          url: 'interne_seite.html',
+          dataType: 'html',
+          success: function (response) {
+            $('#main-content').html(response);
+          }
+        });
+      });
     });
-  });
-});
 
-//-----------------------------------------------------
+    //-----------------------------------------------------
 
 
 
 
 
 
-//Laden des Main-Bereiches von impressum.html mit der Ajax-Methode
+    //Laden des Main-Bereiches von impressum.html mit der Ajax-Methode
 
 
     $(document).ready(function () {
@@ -220,8 +212,8 @@ h3, h4, p {
 
   <header style="padding: 16px; "> <!--Padding: Verringerung des Abstands der Elemente zum Border.-->
 
-    
- <!-- PicoCss Framework Nav-->
+
+    <!-- PicoCss Framework Nav-->
     <nav>
       <ul>
         <li><a href="index.html" class="color">Startseite</a></li> <!-- Nav Verlinkung zur Startseite-->
@@ -247,7 +239,7 @@ h3, h4, p {
   </header>
 
 
-  <main style="padding: 16px;" id="main-content"> 
+  <main style="padding: 16px;" id="main-content">
 
 
     <a style="width: 100%;" href="#" id="formular-laden-button" role="button" class="contrast">Spenden </a>
