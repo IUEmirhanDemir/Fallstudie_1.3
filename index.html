@@ -24,146 +24,101 @@
 
     }
 
-    .center-image {
-      display: block;
-      max-width: 70%;
-      max-height: 70%;
+    .color {
+  color: rgb(205, 157, 122);
+}
 
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.center-image {
+  display: block;
+  max-width: 70%;
+  max-height: 70%;
+  margin: auto;
+}
 
+.custom-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.custom-grid>div {
+  flex-basis: 50%;
+}
 
-    .custom-grid {
-      display: flex;
-      flex-wrap: wrap;
-    }
+.logo-link {
+  display: inline-block;
+  position: relative;
+  height: 80px;
+  width: 256px;
+  overflow: hidden;
+}
 
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    .custom-grid>div {
-      flex-basis: 50%;
-    }
+@media (max-width: 1023px) {
+  .custom-grid>div {
+    flex-basis: 100%;
+  }
 
-    .logo-link {
-      display: inline-block;
-      position: relative;
-      height: 80px;
-      width: 256px;
-      overflow: hidden;
+  .logo-link {
+    width: 126px;
+  }
 
-    }
+  .grid .center-image {
+    order: -1;
+  }
 
-    .logo {
+  .grid article {
+    order: -2;
+  }
+}
 
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+.löschButton {
+  background-color: red;
+  border: 15px;
+  color: white;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
 
-    }
+.collapsible {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
 
+.collapsible:hover {
+  color: darkblue;
+}
 
-    @media (max-width: 1023px) {
-      .custom-grid>div {
-        flex-basis: 100%;
-      }
+h3, h4, p {
+  text-align: center;
+}
 
-      .logo-link {
-        display: inline-block;
-        position: relative;
-        height: 80px;
-        width: 126px;
-        overflow: hidden;
-      }
+.bestaetigung {
+  font-weight: bold;
+  color: wheat;
+}
 
-      .logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+#main-content {
+  text-align: center;
+}
 
-      /* Ändern der Reihenfolge von Bildern und Textabschnitten */
-      .grid .center-image {
-        order: -1;
-      }
+.spenden-item {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
 
-      .grid article {
-        order: -2;
-      }
+.spenden-item:hover {
+  color: darkblue;
+}
 
-
-    }
-
-
-    .logo {
-
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-    }
-
-
-
-
-
-
-    .löschButton {
-      background-color: red;
-      border: 15px;
-      color: white;
-      padding: 5px 10px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-
-    .collapsible {
-
-      cursor: pointer;
-      color: blue;
-      text-decoration: underline;
-    }
-
-    .collapsible:hover {
-      color: darkblue;
-    }
-
-
-
-
-
-
-    h3,
-    h4,
-    p {
-      text-align: center;
-    }
-
-    .bestaetigung {
-      font-weight: bold;
-      color: wheat;
-    }
-
-    #main-content {
-      text-align: center;
-    }
-
-
-
-    .spenden-item {
-      cursor: pointer;
-      color: blue;
-      text-decoration: underline;
-    }
-
-    .spenden-item:hover {
-      color: darkblue;
-    }
   </style>
 
 

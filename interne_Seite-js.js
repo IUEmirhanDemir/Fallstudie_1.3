@@ -1,5 +1,5 @@
 
-//Lädt Daten die SpendenDaten dem lokalen Speicher
+//Lädt Daten die spendenDaten aus dem lokalen Speicher
 
 function datenAusLokalenSpeicherLaden_Funktion() {
   var datenAusLokalenSpeicherLaden = localStorage.getItem('spendenDaten');
@@ -10,6 +10,7 @@ function datenAusLokalenSpeicherLaden_Funktion() {
   }
 }
 //------------------------------------------
+
 
 
 
@@ -25,6 +26,47 @@ function datenAusLokalenSpeicherLaden_Funktion() {
   }
   
   //------------------------------------------
+
+
+
+
+
+
+    /*
+Diese Funktion fügt Klickereignisse für die "name-vorname"-Elemente hinzu, um die Details des Elements anzuzeigen, 
+und den  löschButton, um das Element aus dem lokalen Speicher zu entfernen, und die Anzeige zu aktualisieren.
+    */
+  
+function klickbareNameVorname_Funktion(datenArray) {
+  $('.name-vorname').click(function () {
+    var datenIndexAusDatenArray = $(this).data('index');
+    var details = datenArray[datenIndexAusDatenArray];
+    if (details) {
+      var details_Inhalt = `Abholungsoption: ${details.abholung}<br>`;
+      details_Inhalt += details.abholung === 'Übergabe an der Geschäftsstelle' ? 'Adresse: -<br>Plz: -<br>' : `Adresse: ${details.adresse}<br>Plz: ${details.Plz}<br>`;
+      details_Inhalt += `Kleidungsstück: ${details.kleidungsstueck}<br>Krisengebiet: ${details.krisengebiet}`;
+      $('#details-' + datenIndexAusDatenArray).html(details_Inhalt).toggle();
+    }
+  });
+
+
+
+
+
+  $('.löschButton').click(function () {
+    var datenIndexAusDatenArray = $(this).data('index');
+    datenAusLokalemSpeicherEntfernen_Funktion(datenIndexAusDatenArray);
+    datenAnzeigen_Funktion(datenAusLokalenSpeicherLaden_Funktion());
+  });
+
+
+}
+
+
+//------------------------------------------
+
+
+
 
 
 
@@ -50,42 +92,6 @@ Zudem bindet sie die Funktion klickbareNamenVornamen an jedes Element.
     //------------------------------------------
 
 
-
-
-    /*
-Diese Funktion fügt Klickereignisse für die "name-vorname"-Elemente hinzu, um die Details des Elements anzuzeigen, 
-und für die Löschen-Schaltflächen, um das Element aus dem lokalen Speicher zu entfernen und die Anzeige zu aktualisieren.
-    */
-  
-  function klickbareNameVorname_Funktion(datenArray) {
-    $('.name-vorname').click(function () {
-      var datenIndexAusDatenArray = $(this).data('index');
-      var details = datenArray[datenIndexAusDatenArray];
-      if (details) {
-        var details_Inhalt = `Abholungsoption: ${details.abholung}<br>`;
-        details_Inhalt += details.abholung === 'Übergabe an der Geschäftsstelle' ? 'Adresse: -<br>Plz: -<br>' : `Adresse: ${details.adresse}<br>Plz: ${details.Plz}<br>`;
-        details_Inhalt += `Kleidungsstück: ${details.kleidungsstueck}<br>Krisengebiet: ${details.krisengebiet}`;
-        $('#details-' + datenIndexAusDatenArray).html(details_Inhalt).toggle();
-      }
-    });
-  
- //------------------------------------------
-
-
-
- 
- /*
-Klickfunktion auf die Klasse "löschButton"
-um die entsprechenden Elemente aus dem lokalen Speicher zu entfernen und die Anzeige zu aktualisieren.
- */
-
-    $('.löschButton').click(function () {
-      var datenIndexAusDatenArray = $(this).data('index');
-      datenAusLokalemSpeicherEntfernen_Funktion(datenIndexAusDatenArray);
-      datenAnzeigen_Funktion(datenAusLokalenSpeicherLaden_Funktion());
-    });
-  }
- //------------------------------------------
 
 
 

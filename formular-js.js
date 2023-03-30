@@ -18,6 +18,42 @@
 
 
 
+  // Lädt Daten aus dem localStorage und gibt sie als Objekt oder leeres Array zurück.
+
+
+  function datenAusLokalenSpeicherLaden_Funktion() {
+    var datenAusLokalenSpeicherLaden = localStorage.getItem('spendenDaten');
+    if (datenAusLokalenSpeicherLaden) {
+      return JSON.parse(datenAusLokalenSpeicherLaden);
+    } else {
+      return [];
+    }
+  }
+
+  //------------------------------------------------
+
+
+
+
+
+  // Fügt Datenobjekt zum localStorage hinzu und aktualisiert vorhandene Daten.
+
+  function datenInDenLokaenSpeicherSpeichern_Funktion(spendenInfos) {
+    var datenSpeichern = datenAusLokalenSpeicherLaden_Funktion();
+
+    datenSpeichern.push(spendenInfos);
+
+    localStorage.setItem('spendenDaten', JSON.stringify(datenSpeichern));
+  }
+
+
+  //------------------------------------------------
+
+
+
+
+
+
   /* 
    Code verarbeitet Spendenformular-Eingaben, prüft Abholbedingungen, 
    erstellt Bestätigungsnachricht und speichert Daten für weitere Verarbeitung.
@@ -55,12 +91,12 @@
       Plz = '-';
     }
 
-    var Uhrzeit = new Date();
-    var tag = Uhrzeit.getDate();
-    var monat = Uhrzeit.getMonth() + 1;
-    var jahr = Uhrzeit.getFullYear().toString().substr(-2);
-    var stunde = Uhrzeit.getHours().toString().padStart(2, '0');
-    var minute = Uhrzeit.getMinutes().toString().padStart(2, '0');
+    var Daten = new Date();
+    var tag = Daten.getDate();
+    var monat = Daten.getMonth() + 1;
+    var jahr = Daten.getFullYear().toString().substr(-2);
+    var stunde = Daten.getHours().toString().padStart(2, '0');
+    var minute = Daten.getMinutes().toString().padStart(2, '0');
 
     var bestaetigung = 'Vielen Dank für Ihre Spende!<br><br>' +
         'Name: ' + name + '<br>' +
@@ -70,7 +106,7 @@
         'Kleidungsstück: ' + kleidungsstueck + '<br>' +
         'Krisengebiet: ' + krisengebiet + '<br>' +  '<br>' +
         'Datum: ' + tag + '.' + monat + '.' + jahr  + ' ' +
-        'Uhrzeit: ' + stunde + ':' + minute;
+        'Daten: ' + stunde + ':' + minute;
 
     $('#main-content').html('<div class="bestaetigung">' + bestaetigung + '</div>');
 
@@ -85,36 +121,11 @@
 
 
 
-  // Fügt Datenobjekt zum localStorage hinzu und aktualisiert vorhandene Daten.
-
-  function datenInDenLokaenSpeicherSpeichern_Funktion(spendenInfos) {
-    var datenSpeichern = datenAusLokalenSpeicherLaden_Funktion();
-
-    datenSpeichern.push(spendenInfos);
-
-    localStorage.setItem('spendenDaten', JSON.stringify(datenSpeichern));
-  }
-
-
-  //------------------------------------------------
 
 
 
 
 
-  // Lädt Daten aus dem localStorage und gibt sie als Objekt oder leeres Array zurück.
-
-
-  function datenAusLokalenSpeicherLaden_Funktion() {
-    var datenAusLokalenSpeicherLaden = localStorage.getItem('spendenDaten');
-    if (datenAusLokalenSpeicherLaden) {
-      return JSON.parse(datenAusLokalenSpeicherLaden);
-    } else {
-      return [];
-    }
-  }
-
-  //------------------------------------------------
 
 
 
